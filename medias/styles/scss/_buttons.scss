@@ -1,0 +1,173 @@
+.button {
+    @include fontLt;
+    background: $mainColor;
+    color: $white;
+    font-size: $fontL;
+    font-weight: bold;
+    display: inline-block;
+    padding: 12px 16px 10px 16px;
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover, &:active {
+        background-color: lighten($mainColor, 5%);
+        text-shadow: 0px 1px 0px $mainColor;
+    }
+
+    &.disabled {
+        background: $grey;
+        color: $lightgrey;
+        cursor: default;
+
+        &:hover, &:active {
+            background: $grey;
+            color: $lightgrey;
+            text-shadow: none;
+        }
+    }
+
+    &.green {
+        background: $green;
+        color: $white;
+
+        &:hover, &:active {
+            background-color: lighten($green, 10%);
+            text-shadow: none
+        }
+    }
+
+    .icon {
+        font-weight: normal;
+        line-height: 5px;
+        font-size: $fontLL;
+        margin-right: 4px;
+        .small {
+            font-size: $fontS;
+        }
+    }
+}
+
+.checkbox {
+    display: none;
+}
+
+.switch {
+    clear: both;
+    display: block;
+    width: 26px;
+    height: 32px;
+    background: $white;
+    z-index: 0;
+    margin: 0 8px 10px 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+
+    &:after {
+        content: ' ';
+        height: 26px;
+        width: 8px;
+        border-radius: 2px;
+        background: $darkgrey;
+        position: absolute;
+        z-index: 2;
+        top: 3px;
+        left: 3px;
+        transition-duration: 300ms;
+    }
+
+    &.error {
+        background: $red;
+        &:after {
+            background: $white;
+        }
+    }
+
+    &.switchOn {
+        background: $white !important;
+        &:before {
+            background: $white !important;
+        }
+        &:after {
+            left: 9px !important;
+            width: 14px;
+            background: $mainColor !important;
+        }
+    }
+}
+
+.smallswitch {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background: $white;
+    z-index: 0;
+    margin: 0 8px -6px 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+
+    &:after {
+        content: ' ';
+        height: 14px;
+        width: 14px;
+        border-radius: 7px;
+        background: $darkgrey;
+        position: absolute;
+        z-index: 2;
+        top: 3px;
+        left: 3px;
+        transition-duration: 300ms;
+    }
+
+    &.error {
+        background: $red;
+        &:after {
+            background: $white;
+        }
+    }
+
+    &.switchOn {
+        background: $white !important;
+        &:before {
+            background: $white !important;
+        }
+        &:after {
+            left: 9px !important;
+            width: 18px;
+            background: $mainColor !important;
+        }
+    }
+}
+
+.virtualcheck {
+    background: $white;
+    height: 18px;
+    width: 18px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 9px;
+    line-height: 20px;
+    color:$black;
+    font-weight: bold;
+    cursor: pointer;
+
+    &.checked:before {
+        content:'\2713';
+        display: inline;
+        position: absolute;
+        margin-left: -7px;
+    }
+}

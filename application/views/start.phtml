@@ -1,0 +1,49 @@
+<?php
+echo template(
+    'partials/common/header.phtml',
+    [
+        'title' => 'Enchères',
+    ]
+);
+?>
+<div class="container">
+<div id="startGame">
+    <div class="row">
+        <col-md-6>
+            <h2>Mon profil</h2>
+            <p>1. Identifiez-vous :</p>
+            <div class="mt10 mb20 textCenter">
+                <?php foreach($joueurs as $joueur): ?>
+                <div class="joueurselector" data-id="<?php echo($joueur->getId()); ?>">
+                    <span class="name"><?php echo($joueur->getName()); ?></span>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </col-md-6>
+        <col-md-6>
+            <h2>Séance d'enchères</h2>
+            <p>2. Créer une session ou choisissez celle que vous souhaitez rejoindre :</p>
+            <?php if(isset($error)): ?>
+            <p class="error"><?php echo($error); ?></p>
+            <?php endif; ?>
+            <div class="row mt20">
+                <div class="col-md-6 textCenter">Rejoindre la session #
+                    <form action="<?php echo(di('router')->pathFor('ENCHERES')); ?>" name="join" method="post">
+                        <input type="hidden" name="joueurId" value="0"/>
+                        <input type="number" name="partieId" />
+                        <span id="joinSession" class="button disabled">Rejoindre</span>
+                    </form>
+                </div>
+                <div class="col-md-6 textCenter">
+                    <form action="<?php echo(di('router')->pathFor('ENCHERES')); ?>" name="join" method="post">
+                        <input type="hidden" name="joueurId" value="0"/>
+                        <span id="createSession" class="button disabled">Créer une session</span>
+                    </form>
+                </div>
+            </div>
+        </col-md-6>
+    </div>
+</div>
+
+<script type="text/javascript" src="<?php echo baseUrl('medias/scripts/start.min.js'); ?>"></script>
+<?php echo template('partials/common/footer.phtml'); ?>

@@ -1,0 +1,26 @@
+input[name=partieId] {
+    width: 100px;
+    display: inline-block;
+}
+
+.joueurselector {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px;
+    border: $mainColor 1px solid;
+    border-radius: 3px;
+    color:$mainColor;
+    cursor: pointer;
+    font-size:$fontLL;
+    min-width: 150px;
+
+    &:hover {
+        background-color: lighten($mainColor, 25%);
+    }
+
+    &.selected {
+        @include fontBd;
+        border-width: 2px;
+        background-color: lighten($mainColor, 20%);
+    }
+}

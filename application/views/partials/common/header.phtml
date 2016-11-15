@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="description" content="<?php echo isset($description) ? escape($description) : ''; ?>">
+        <meta name="keywords" content="<?php echo isset($keywords) ? escape($keywords) : ''; ?>">
+        <meta name="robots" content="index, follow">
+
+        <title><?php echo(isset($title) ? $title : 'Enchères'); ?></title>
+        <link rel="stylesheet" href="<?php echo baseUrl('medias/styles/css/styles.css'); ?>" />
+
+        <script type="text/javascript" src="<?php echo baseUrl('medias/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+    </head>
+    <body>
+        <header>
+            <div id="joueurDetails">
+                <?php if(!empty($joueur)): ?>
+                <span id="joueur" data-id="<?php echo($joueur->getId()); ?>"><?php echo($joueur->getName()); ?></span>
+                <br/>
+                <span id="capital"><?php echo($joueur->getCapital(true)); ?></span>
+                <?php endif; ?>
+            </div><img src="http://www.mercier-auto.com/wp-content/themes/aka_theme/images/logo.png" alt="Mercier">
+        </header>

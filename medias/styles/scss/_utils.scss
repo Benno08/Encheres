@@ -1,0 +1,119 @@
+/* --- POSITION --- */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.fn {
+    float: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.textJustify {
+    text-align: justify;
+}
+
+.stretchIt {
+    white-space: nowrap;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+/* --- /POSITION --- */
+
+/* --- WIDTH --- */
+.full_size {
+    width: 100%;
+}
+
+/* --- /WIDTH --- */
+
+/* --- VISIBILITY --- */
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* --- /VISIBILITY --- */
+
+/* --- MARGINS / PADDINGS --- */
+$sizes: 0, 5, 10, 20, 30, 40, 50, 60, 80, 90, 100;
+@each $size in $sizes {
+    .p-#{$size} {
+        padding: #{$size}px !important;
+    }
+
+    .pt#{$size} {
+        padding-top: #{$size}px !important;
+    }
+
+    .pr#{$size} {
+        padding-right: #{$size}px !important;
+    }
+
+    .pb#{$size} {
+        padding-bottom: #{$size}px !important;
+    }
+
+    .pl#{$size} {
+        padding-left: #{$size}px !important;
+    }
+
+    .m#{$size} {
+        margin: #{$size}px !important;
+    }
+
+    .mt#{$size} {
+        margin-top: #{$size}px !important;
+    }
+
+    .mr#{$size} {
+        margin-right: #{$size}px !important;
+    }
+
+    .mb#{$size} {
+        margin-bottom: #{$size}px !important;
+    }
+
+    .ml#{$size} {
+        margin-left: #{$size}px !important;
+    }
+}

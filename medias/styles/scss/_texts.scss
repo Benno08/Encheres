@@ -1,0 +1,112 @@
+// --- TYPOS ---
+// -------------
+	$fontXS			: 9px;
+	$fontS			: 12px;
+	$fontM			: 13px;
+	$fontL			: 16px;
+	$fontLL			: 20px;
+	$fontXL			: 30px;
+
+	$lineHeightXS  	: $fontXS + 2;
+	$lineHeightS	: $fontS + 2;
+	$lineHeightM	: $fontM + 2;
+	$lineHeightL	: $fontL + 1;
+	$lineHeightXL	: $fontXL;
+
+
+	h1{
+		@include fontBd;
+		padding: 20px 0;
+		font-size: $fontXL;
+		font-weight: normal;
+		line-height: $lineHeightXL;
+		text-transform: uppercase;
+		color: $black;
+	}
+
+	h2{
+		@include fontBd;
+		padding: 10px 0;
+		font-size: $fontLL;
+		font-weight: normal;
+		line-height: $lineHeightXL;
+		text-transform: uppercase;
+		color: $black;
+	}
+
+	h3{
+		@include fontBd;
+		padding: 5px 0;
+		font-size: $fontL;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: $black;
+	}
+
+	h4{
+		@include fontBd;
+		font-size: $fontM;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: $black;
+		padding: 0;
+	}
+
+	p {
+		padding: 10px 0;
+		color: $darkgrey;
+		text-align: justify;
+	}
+
+	a, .link {
+		font-weight: bold;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	label {
+		@include fontRn;
+		font-size: $fontL;
+		color:$darkgrey;
+		margin: 8px 0 2px 0;
+		display: inline-block;
+
+		&.error {
+			color: $red;
+		}
+	}
+
+	strong, b {
+		@include fontBd;
+	}
+// --- /TYPOS ---
+
+body.node-type-news-item,
+body.node-type-job-offer {
+	h2{
+		@include fontBd;
+		font-size: 80px;
+		font-weight: normal;
+		line-height: 80px;
+		text-transform: uppercase;
+		color: $black;
+		word-wrap: break-word;
+	}
+
+	h1{
+		@include fontBd;
+		font-size: $fontXL;
+		font-weight: normal;
+		line-height: $lineHeightXL;
+		text-transform: uppercase;
+		color: $black;
+		padding: 10px 0;
+	}
+}
+
+
+// SURLIGNAGE DES TEXTES
+::-moz-selection{background: $grey; color:#FFF}
+::-moz-selection{background: $grey; color:#FFF}
+::-webkit-selection{background: $grey; color:#FFF}
+::selection{background: $grey; color:#FFF}

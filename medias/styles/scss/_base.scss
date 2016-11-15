@@ -1,0 +1,41 @@
+html,
+body,
+table{
+    @include fontLt;
+    font-size: $fontM;
+    color: $darkgrey;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: $darkgrey;
+}
+
+input[type=text],
+input[type=number],
+input[type=email] {
+    border: 1px solid $middlegrey;
+    font-size: $fontLL;
+    color:$black;
+    padding: 8px 6px 9px 6px;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+        border-color: $grey;
+    }
+
+    &.error {
+        border-color: $red;
+    }
+
+    &[disabled] {
+        color:$grey;
+    }
+}

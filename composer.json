@@ -1,0 +1,19 @@
+{
+    "name": "Nikon/Nikon-Salon-Photo-2016",
+    "require": {
+        "php": ">=5.6.0",
+        "slim/slim": "^3.1",
+		"slim/php-view": "^2.0",
+        "tuupola/slim-basic-auth": "^2.2",
+        "swiftmailer/swiftmailer": "^5.4",
+        "cocur/slugify": "^2.3"
+    },
+    "require-dev": {
+            "monolog/monolog": "^1.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "application"
+        }
+    }
+}

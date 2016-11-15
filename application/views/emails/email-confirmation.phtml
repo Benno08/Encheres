@@ -1,0 +1,866 @@
+<?php
+    use App\Model\NikonItem;
+    $contentsLength = count($contents);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>News</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<style type="text/css">
+	#outlook a{padding:0!important;}
+	.ReadMsgBody{width:100%!important;} .ExternalClass{width:100%!important;}
+	.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%!important;}
+	body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%!important; -ms-text-size-adjust:100%!important;}
+	table, td{mso-table-lspace:0pt!important; mso-table-rspace:0pt!important;}
+	img{-ms-interpolation-mode:bicubic!important;}
+	img{border:0!important; height:auto!important; line-height:100%!important; outline:none!important; text-decoration:none!important;}
+	table{border-collapse:collapse!important;}
+	table tr{border-collapse:collapse!important;}
+	table td{border-collapse:collapse!important;}
+	body{height:100%!important; width:100%!important; min-width:100%!important; max-width:100%!important; margin:0!important; padding:0!important; background-color:#ffffff!important;}
+	*{box-sizing:border-box!important; -moz-box-sizing:border-box!important; -webkit-box-sizing:border-box!important;}
+	
+	/* iOS BLUE LINKS */
+	a[x-apple-data-detectors] {
+		color: inherit !important;
+		text-decoration: none !important;
+		font-size: inherit !important;
+		font-family: inherit !important;
+		font-weight: inherit !important;
+		line-height: inherit !important;
+	}
+	
+	.gmailfix {
+		display:none;
+		display:none!important;
+	}
+
+	@media screen and (max-width: 640px){	
+		*[class=mobile_hidden]{display:none!important;}
+		
+		*[class=fullWidth]{
+			display: block!important;
+			max-width:320px!important;
+			min-width:320px!important;
+			width:100%!important;
+			line-height:100%;
+			margin: 0 auto!important;
+		}
+		*[class=width298]{
+			width:298px!important;
+		}
+		*[class=width304]{
+			width:304px!important;
+		}
+		*[class=width8]{
+			width:8px!important;
+		}
+		*[class=height20]{
+			height:20px!important;
+		}
+		
+		*[class=width100]{
+			width:100%;
+		}
+		*[class=width60]{
+			width:60%;
+		}
+		*[class=width35]{
+			width:35%;
+		}
+		*[class=width5]{
+			width:5%;
+		}
+		
+		table[class=bottom_logo],
+		td[class=bottom_logo],
+		img[class=bottom_logo] { 
+			width: 35px !important; 
+		}
+
+		table[class=bottom_sociaux],
+		td[class=bottom_sociaux],
+		img[class=bottom_sociaux] { 
+			width: 240px !important; 
+		}
+
+		table[class=bottom_sociaux_td],
+		td[class=bottom_sociaux_td],
+		img[class=bottom_sociaux_td] { 
+			width: 37px !important; 
+		}
+
+		table[class=bottom_sociaux_img],
+		td[class=bottom_sociaux_img],
+		img[class=bottom_sociaux_img] { 
+			width: 28px !important;
+		}
+		
+		img[class=logo_header]{
+			width: 97px!important;
+		}
+		
+		table[class=half_bt]{
+			width:144px!important;
+		}
+	}
+</style>
+</head>
+
+<body bgcolor="#ffffff" style="margin:0px; padding:0px;">
+	<center>        
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+        	<tr>
+            	<td height="10"></td>
+            </tr>
+        	<tr>
+            	<td>
+                	<a href="http://www.nikon.fr/fr_FR/" target="_blank" title="Nikon"><img src="<?php echo($domain . baseUrl('medias/images/emails/logo_header.jpg')); ?>" width="195" border="0" style="display:block; max-width:100%;" alt="Nikon" class="logo_header"/></a>
+                </td>
+            </tr>
+            <tr>
+            	<td height="10"></td>
+            </tr>
+        </table>
+
+        <?php if($prospect->getFirstname() != ''): ?>
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth" bgcolor="#ebf1f0">
+        	<tr>
+            	<td><img src="<?php echo($domain . baseUrl('medias/images/emails/title_concours.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="Nikon vous remercie pour votre participation au grand jeu concours"/></td>
+            </tr>
+
+            <tr>
+                <td valign="top" class="fullWidth">
+                	<!--[if (gte mso 9)|(IE)]>
+                    	<table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        	<tr>
+                            	<td width="156">
+                    <![endif]-->
+                        <table width="156" align="left" cellpadding="0" cellspacing="0" border="0" class="mobile_hidden">
+                            <tr>
+                                <td valign="bottom"><img src="<?php echo($domain . baseUrl('medias/images/emails/l_text.jpg')); ?>" width="156" border="0" style="display:block;" class="fullWidth" alt="Nikon vous remercie pour votre participation au grand jeu concours"/></td>
+                            </tr>
+                        </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    			</td>
+                        		<td width="328">
+                    <![endif]-->
+                        <table width="328" align="left" cellpadding="0" cellspacing="0" border="0" class="fullWidth">
+                            <tr>
+                            	<td width="10"></td>
+                                <td align="left" style="mso-line-height-rule: exactly; line-height:13px;">
+                                	<font face="Arial, Helvetica, sans-serif" color="#000000" size="1" style="font-size:11px; line-height: 120%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;"><br />
+                                    Bonjour <?php echo($prospect->getFirstname()); ?>,<br />
+                                    Votre participation au grand jeu concours a &eacute;t&eacute; prise en compte. Vous serez inform&eacute; par email en cas de gain apr&egrave;s le tirage au sort (voir <a style="color:#000000; text-decoration: underline;" href="<?php echo($urlReglement); ?>">règlement</a>).</font></td>
+                                <td width="10"></td>
+                            </tr>
+                            <tr>
+                            	<td width="10"></td>
+                                <td align="right" style="mso-line-height-rule: exactly; line-height:13px;">
+                                	<font face="Arial, Helvetica, sans-serif" color="#000000" size="1" style="font-size:11px; line-height: 120%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;">L'&eacute;quipe Nikon</font></td>
+                                <td width="10"></td>
+                            </tr>
+                        </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    			</td>
+                        		<td width="156">
+                    <![endif]-->
+                        <table width="156" align="left" cellpadding="0" cellspacing="0" border="0" class="mobile_hidden">
+                            <tr>
+                                <td width="156" height="91"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                            </tr>
+                        </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    			</td>
+                        	</tr>
+                    	</table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <?php if($contentsLength == 0): ?>
+                <tr>
+                    <td><img src="<?php echo($domain . baseUrl('medias/images/emails/photo_concours_big.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="Nikon vous remercie pour votre participation au grand jeu concours"/></td>
+                </tr>
+            <?php else: ?>
+                <tr>
+                    <td><img src="<?php echo($domain . baseUrl('medias/images/emails/photo_concours.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="Nikon vous remercie pour votre participation au grand jeu concours"/></td>
+                </tr>
+                <tr>
+                    <td height="25" bgcolor="#ffdc00" align="center"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                </tr>
+                <tr>
+                    <td bgcolor="#ffdc00" align="center"><font face="Arial, Helvetica, sans-serif" size="3" style="font-size:15px; text-transform:uppercase;" color="#000000"><strong><?php echo($prospect->getFirstname() != '' ? $prospect->getFirstname() . ',' : ''); ?> VOICI LE R&Eacute;CAPITULATIF DE VOS CONTENUS NIKON PR&Eacute;F&Eacute;R&Eacute;S :</strong></font></td>
+                </tr>
+                <tr>
+                    <td height="25" bgcolor="#ffdc00" align="center"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                </tr>
+            <?php endif; ?>
+        </table>
+        <?php else: ?>
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth" bgcolor="#ebf1f0">
+            <tr>
+                <td><img src="<?php echo($domain . baseUrl('medias/images/emails/title_non_participation.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="Nikon vous remercie pour votre s&eacute;lection"/></td>
+            </tr>
+            <tr>
+                <td height="25" bgcolor="#ffdc00" align="center"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffdc00" align="center"><font face="Arial, Helvetica, sans-serif" size="3" style="font-size:15px; text-transform:uppercase;" color="#000000"><strong><?php echo($prospect->getFirstname() != '' ? $prospect->getFirstname() . ',' : ''); ?> VOICI LE R&Eacute;CAPITULATIF DE VOS CONTENU NIKON PR&Eacute;F&Eacute;R&Eacute;S :</strong></font></td>
+            </tr>
+            <tr>
+                <td height="25" bgcolor="#ffdc00" align="center"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+            </tr>
+        </table>
+        <?php endif; ?>
+
+        <?php
+            if($contentsLength > 0)
+            {
+                $i = 1;
+
+                foreach($contents as $id)
+                {
+                    $nikonItem = NikonItem::getNikonItemFromId($id);
+                    $i++;
+                    if(!is_null($nikonItem))
+                    {
+                        ?>
+
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+                            <tr>
+                                <td height="20"></td>
+                            </tr>
+                            <tr>
+                                <td width="640" class="fullWidth" align="center">
+                                    <table border="0" cellpadding="0" cellspacing="0" class="fullWidth" align="center">
+                                        <tr>
+                                            <td width="16" class="width8" height="20"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                                            <td width="608" class="width304">
+                                            	<!--[if (gte mso 9)|(IE)]>
+                                                    <table width="434" align="center" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td width="434">
+                                                <!-- [endif] -->
+                                                <table border="0" cellpadding="0" cellspacing="0" align="left" width="434" class="width60">
+                                                    <tr>
+                                                        <td align="left" style="mso-line-height-rule: exactly; line-height:13px;">
+                                                        <a href="<?php echo($nikonItem->getUrlDetails()); ?>" style="color: #000000;"><font face="Arial, Helvetica, sans-serif" size="3" style="font-size:15px; line-height:120%; text-transform:uppercase; text-decoration:none;" color="#000000"><strong><?php echo($nikonItem->getTitle()); ?></strong></font></a><br/>
+                                                            <br/>
+                                                            <font face="Arial, Helvetica, sans-serif" size="2" style="font-size:11px;" color="#6d6d6d"><?php echo($nikonItem->getDescription()); ?></font>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="16" class="height20"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="140" align="left" class="half_bt">
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <a href="<?php echo($nikonItem->getUrlDetails()); ?>" target="_blank" style="display: block;">
+                                                                            <img src="<?php echo($domain . baseUrl('medias/images/emails/l_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td bgcolor="#ffde00" width="132" height="35" align="center" class="width298">
+                                                                        <a href="<?php echo($nikonItem->getUrlDetails()); ?>" style="display: block; padding: 10px; text-decoration:none; color:#000000; font-size:12px;"><font face="Arial, Helvetica, sans-serif" size="2" style="font-size:12px; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;"><strong><?php echo($nikonItem->getCategory() == NikonItem::PRODUIT ? 'EN SAVOIR PLUS' : 'D&Eacute;COUVRIR'); ?></strong></font></a>
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <a href="<?php echo($nikonItem->getUrlDetails()); ?>" target="_blank" style="display: block;">
+                                                                            <img src="<?php echo($domain . baseUrl('medias/images/emails/r_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="10"></td>
+                                                                </tr>
+                                                            </table>
+                                                            <?php if(!empty($nikonItem->getUrlStore())): ?>
+                                                                <table width="16" cellpadding="0" cellspacing="0" border="0" align="left">
+                                                                    <tr>
+                                                                        <td width="16" height="20"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                                                                    </tr>
+                                                                </table>
+                                                                <table border="0" cellpadding="0" cellspacing="0" width="140" align="left" class="half_bt">
+                                                                    <tr>
+                                                                        <td align="left">
+                                                                            <a href="<?php echo($nikonItem->getUrlStore()); ?>" target="_blank" style="display: block;">
+                                                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/l_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="#ffde00" width="132" height="35" align="center" class="width298">
+                                                                            <a href="<?php echo($nikonItem->getUrlStore()); ?>" style="display: block; padding: 10px; text-decoration:none; color:#000000; font-size:12px;"><font face="Arial, Helvetica, sans-serif" size="2" style="font-size:12px; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;"><strong>ACHETER</strong></font></a>
+                                                                        </td>
+                                                                        <td align="right">
+                                                                            <a href="<?php echo($nikonItem->getUrlStore()); ?>" target="_blank" style="display: block;">
+                                                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/r_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="3" height="10"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            <?php endif; ?>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]>
+                                                			</td>
+                                                            <td width="16">
+                                                <!-- [endif] -->
+                                                <table border="0" cellpadding="0" cellspacing="0" align="left" width="16" class="width5">
+                                                    <tr>
+                                                        <td width="16" class="width100" height="20"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]>
+                                                			</td>
+                                                            <td width="158">
+                                                <!-- [endif] -->
+                                                <table border="0" cellpadding="0" cellspacing="0" align="left" width="158" class="width35">
+                                                    <tr>
+                                                        <td align="right">
+                                                            <a href="<?php echo($nikonItem->getUrlDetails()); ?>"><img src="<?php echo($domain . baseUrl('medias/images/items/' . $nikonItem->getImage())); ?>" border="0" width="150" style="display:block; max-width:100%;" alt="<?php echo($nikonItem->getTitle()); ?>"/></a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if (gte mso 9)|(IE)]>
+                                                			</td>
+                                                        </tr>
+                                                    </table>
+                                                <!-- [endif] -->
+                                            </td>
+                                            <td width="16" class="width8"></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td height="10" colspan="3"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="20"></td>
+                            </tr>
+                        </table>
+                        <?php if($i <= $contentsLength): ?>
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+                            <tr>
+                                <td align="center" class="fullWidth"><img src="<?php echo($domain . baseUrl('medias/images/emails/split_product.gif')); ?>" width="116" border="0" style="display:block; max-width:100%;" alt=""/></td>
+                            </tr>
+                        </table>
+                        <?php endif; ?>
+                        <?php
+                    }
+                }
+            }
+        else
+        {
+            ?>
+            <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+                <tr>
+                    <td height="20"></td>
+                </tr>
+            </table>
+            <?php
+        }
+        ?>
+
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+        	<tr>
+            	<td class="fullWidth"><a href="https://lemag.iamyourstory.fr/dailymag/"><img src="<?php echo($domain . baseUrl('medias/images/emails/dailymag.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="DailyMag"/></a></td>
+            </tr>
+            <tr>
+            	<td height="20"></td>
+            </tr>
+            <tr>
+            	<td>
+                	<!--[if (gte mso 9)|(IE)]>
+                        <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                            <tr>
+                                <td width="16">
+                    <![endif]-->
+                	<table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                <td width="608">
+                    <![endif]-->
+                        <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                            <tr>
+                                <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                    <font face="Arial, Helvetica, sans-serif" size="3" style="font-size:16px; text-transform:uppercase; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;" color="#000000"><strong>DAILYMAG – UN VOYAGE EN LAPONIE A GAGNER !</strong></font>
+                                </td>
+                            </tr>
+                        </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                            </tr>
+                        </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <font face="Arial, Helvetica, sans-serif" size="1" style="font-size:11px; line-height: 120%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;" color="#000000"><strong>En novembre, Nikon vous propose de c&eacute;l&eacute;brer le Salon de la Photographie avec un nouvel article par jour ! Partagez-les pour tenter de remporter un voyage avec la Nikon School.</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="140" align="left" class="width304">
+                                    <tr>
+                                        <td colspan="3" height="16" class="height20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <a href="https://lemag.iamyourstory.fr/dailymag/" target="_blank" style="display: block;">
+                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/l_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                            </a>
+                                        </td>
+                                        <td bgcolor="#ffde00" width="132" height="35" align="center" class="width298">
+                                            <a href="https://lemag.iamyourstory.fr/dailymag/" style="display: block; padding: 10px; text-decoration:none; color:#000000;"><font face="Arial, Helvetica, sans-serif" size="2" style="font-size:12px; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;"><strong>EN SAVOIR PLUS</strong></font></a>
+                                        </td>
+                                        <td align="right">
+                                            <a href="https://lemag.iamyourstory.fr/dailymag/" target="_blank" style="display: block;">
+                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/r_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+            	<td height="20"></td>
+            </tr>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+            <tr>
+                <td class="fullWidth"><a href="http://www.festivalnikon.fr/"><img src="<?php echo($domain . baseUrl('medias/images/emails/nikon_film_festival.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="Nikon Film Festival"/></a></td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <font face="Arial, Helvetica, sans-serif" size="3" style="font-size:16px; text-transform:uppercase; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;" color="#000000"><strong>NIKON FILM FESTIVAL</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <font face="Arial, Helvetica, sans-serif" size="1" style="font-size:11px; line-height: 120%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;" color="#000000"><strong>D&eacute;couvrez la 7<sup>&egrave;me</sup> &eacute;dition pr&eacute;sid&eacute;e par le r&eacute;alisateur C&eacute;dric Klapisch sur le th&egrave;me de la rencontre.</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="140" align="left" class="width304">
+                                    <tr>
+                                        <td colspan="3" height="16" class="height20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <a href="http://www.festivalnikon.fr/" target="_blank" style="display: block;">
+                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/l_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                            </a>
+                                        </td>
+                                        <td bgcolor="#ffde00" width="132" height="35" align="center" class="width298">
+                                            <a href="http://www.festivalnikon.fr/" style="display: block; padding: 10px; text-decoration:none; color:#000000;"><font face="Arial, Helvetica, sans-serif" size="2" style="font-size:12px; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;"><strong>EN SAVOIR PLUS</strong></font></a>
+                                        </td>
+                                        <td align="right">
+                                            <a href="http://www.festivalnikon.fr/" target="_blank" style="display: block;">
+                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/r_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="640" style="width: 640px; min-width:640px;" class="fullWidth">
+            <tr>
+                <td class="fullWidth"><a href="http://promotions.iamyourstory.fr"><img src="<?php echo($domain . baseUrl('medias/images/emails/promotions.jpg')); ?>" width="640" border="0" style="display:block; max-width:100%;" alt="Promotions"/></a></td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <font face="Arial, Helvetica, sans-serif" size="3" style="font-size:16px; text-transform:uppercase; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;" color="#000000"><strong>PROMOTIONS</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <font face="Arial, Helvetica, sans-serif" size="1" style="font-size:11px; line-height: 120%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;" color="#000000"><strong>Vous cherchez des bons plans ? Retrouvez toutes les promotions Nikon en cours sur le site IAMYOURSTORY.</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" align="center" border="0" cellpadding="0" cellspacing="0" style="width:640px; min-width:640px;">
+                        <tr>
+                            <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="608">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="608" align="left" class="width304">
+                        <tr>
+                            <td align="left" style="mso-line-height-rule: exactly; line-height:16px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="140" align="left" class="width304">
+                                    <tr>
+                                        <td colspan="3" height="16" class="height20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <a href="http://promotions.iamyourstory.fr" target="_blank" style="display: block;">
+                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/l_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                            </a>
+                                        </td>
+                                        <td bgcolor="#ffde00" width="132" height="35" align="center" class="width298">
+                                            <a href="http://promotions.iamyourstory.fr" style="display: block; padding: 10px; text-decoration:none; color:#000000;"><font face="Arial, Helvetica, sans-serif" size="2" style="font-size:12px; line-height: 100%;-webkit-text-size-adjust: none; -ms-text-size-adjust: none;"><strong>EN SAVOIR PLUS</strong></font></a>
+                                        </td>
+                                        <td align="right">
+                                            <a href="http://promotions.iamyourstory.fr" target="_blank" style="display: block;">
+                                                <img src="<?php echo($domain . baseUrl('medias/images/emails/r_bt.gif')); ?>" width="4" border="0" style="display:block;" alt=""/>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    <td width="16">
+                    <![endif]-->
+                    <table align="left" width="16" cellpadding="0" cellspacing="0" border="0" class="width8">
+                        <tr>
+                            <td width="16" height="20" class="width8"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+        </table>
+
+
+		<table width="640" border="0" cellpadding="0" cellspacing="0" style="width: 640px; min-width:640px;" class="fullWidth">
+            <tr>
+                <td width="16" height="60" class="dis_none"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                <td width="50" height="60" class="bottom_logo">
+                    <a href="http://www.nikon.fr/fr_FR" target="_blank">
+                        <img src="<?php echo($domain . baseUrl('medias/images/emails/logo_footer.jpg')); ?>" width="49" height="49" alt="" style="display: block;" border="0" class="bottom_logo" />
+                    </a>
+                </td>
+                <td width="31" height="60" class="bottom_sociaux_img"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                <td width="226" height="60" class="bottom_sociaux_img"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                <td width="352" height="60" class="bottom_sociaux" align="right">
+                    <table width="352" height="60" border="0" cellpadding="0" cellspacing="0" class="bottom_sociaux" align="right">
+                        <tr>
+                            <td width="113" height="60" style="font-family: 'Arial', sans-serif; font-size: 14px; color: #424242; text-align: center;">
+                                Suivez-nous :
+                            </td>
+                            <td width="40" height="60" class="bottom_sociaux_td">
+                                <a href="https://www.facebook.com/NikonFrance" target="_blank">
+                                    <img src="<?php echo($domain . baseUrl('medias/images/emails/facebook.jpg')); ?>" width="40" height="40" alt="Facebook" style="display: block; float: right;" border="0" class="bottom_sociaux_img" />
+                                </a>
+                            </td>
+                            <td width="40" height="60" class="bottom_sociaux_td">
+                                <a href="https://twitter.com/NikonFR" target="_blank">
+                                    <img src="<?php echo($domain . baseUrl('medias/images/emails/twitter.jpg')); ?>" width="40" height="40" alt="Twitter" style="display: block; float: right;" border="0" class="bottom_sociaux_img" />
+                                </a>
+                            </td>
+                            <td width="40" height="60" class="bottom_sociaux_td">
+                                <a href="https://www.instagram.com/nikonfr/" target="_blank">
+                                    <img src="<?php echo($domain . baseUrl('medias/images/emails/instagram.jpg')); ?>" width="40" height="40" alt="Instagram" style="display: block; float: right;" border="0" class="bottom_sociaux_img" />
+                                </a>
+                            </td>
+                            <td width="40" height="60" class="bottom_sociaux_td">
+                                <a href="https://www.youtube.com/user/Nikonfrance" target="_blank">
+                                    <img src="<?php echo($domain . baseUrl('medias/images/emails/youtube.jpg')); ?>" width="40" height="40" alt="YouTube" style="display: block; float: right;" border="0" class="bottom_sociaux_img" />
+                                </a>
+                            </td>
+                            <td width="16" height="60" class="dis_none"><font style="font-size:1px;display:none !important;display:none;">&nbsp;</font></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+    
+    <div class="gmailfix" style="white-space:nowrap; font:15px courier; line-height:0;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </div>
+</body>
+</html>

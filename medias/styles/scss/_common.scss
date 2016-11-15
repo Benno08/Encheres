@@ -1,0 +1,17 @@
+.container {
+    -webkit-overflow-scrolling: auto;
+}
+
+section {
+    background: $white;
+
+    .uppercase {
+        color: $black;
+        text-transform: uppercase;
+    }
+}
+
+.error {
+    text-align: center;
+    color:$red;
+}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formations>
+	<formation type="Prise de vue">
+		<titre>E-SCHOOL : LE COURS PHOTO DEPUIS CHEZ VOUS</titre>
+		<description>Chez-vous, depuis votre ordinateur, un formateur vous guide en direct dans la découverte des commandes clés de votre appareil.
+			Un moyen interactif et sans contrainte, pour vous faire rapidement plaisir avec votre reflex.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/eschool-le-cours-photo-depuis-chez-vous</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/eschool-le-cours-photo-depuis-chez-vous/image-vignette-2/1999938-1-fre-FR/image-vignette-2_nikon_medium.png</image>
+	</formation>
+	<formation type="Prise de vue">
+		<titre>CONTRÔLEZ LA PROFONDEUR DE CHAMP</titre>
+		<description>Apprenez à gérer votre focale, votre placement et votre diaphragme, dans un cours qui vous donnera les clés de la gestion de la profondeur de champ, notamment grâce au mode semi-automatique de Priorité à l'ouverture.
+			Ce cours photo est proposé à Paris, Lyon et Bordeaux.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/controlez-la-profondeur-de-champ</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/controler-la-profondeur-de-champ/image-vignette/2123746-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Prise de vue">
+		<titre>CONTRÔLER LE RENDU DE MOUVEMENT</titre>
+		<description>Apprenez à gérer votre temps de pose à l'aide du mode priorité à la vitesse et tous les paramètres complémentaires pour maîtriser le rendu de mouvement de vos sujets.
+			Ce cours photo est proposé à Paris, Lyon et Bordeaux.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/controler-le-rendu-de-mouvement</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/rendu-de-mouvement/image-vignette/2123823-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Prise de vue">
+		<titre>EXPRESSION PHOTOGRAPHIQUE</titre>
+		<description>Ce stage met l'expression photographique à l'origine de toute image. L'espace de deux jours, vous apprendrez à préciser le photographe qui est en vous, et à dépasser les aspects techniques, pour les mettre au service de votre propre créativité.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/prise-de-vue-expression-photographique</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/prise-de-vue-creativite/image-vignette/1968914-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Atelier thématique">
+		<titre>PORTRAIT : PHOTOGRAPHIEZ VOS PROCHES</titre>
+		<description>Lors de cette journée de formation, nous observerons que les outils et réglages techniques sont assez simples et que l’art du portrait réside davantage dans la magie de l’instant à capter.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/portrait-photographiez-vos-proches</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/portrait-photographiez-vos-proches/image-vignette/3261-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Atelier thématique">
+		<titre>PARIS STREET NOIR ET BLANC</titre>
+		<description>Au Programme, vous apprendrez à gérer le cadre et la lumière, avec un travail particulier sur le Noir et Blanc.
+			Une très belle balade photographique, qui vous ouvrira de nouvelles perspectives en Street Photography.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/paris-street-noir-et-blanc</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/street-paris-noir-blanc/image-vignette/1764539-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Atelier thématique">
+		<titre>FAUNE ET LUMIÈRES DE MONTIER EN DER</titre>
+		<description>Profitant des quelques jours précédant le festival de la photographie animalière et de nature de Montier en Der, nous vous proposons 3 jours et demi de stage pour vous exercer à l’art de la photographie animalière et de la photographie de nature.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/faune-et-lumieres-de-montier-en-der</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/faune-et-lumieres-de-montier-en-der/image-vignette/3385-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Video">
+		<titre>RÉALISER UNE VIDÉO AVEC UN REFLEX</titre>
+		<description>Destinée à tous les photographes désireux de compléter leur savoir faire photo par du «tournage vidéo» en reflex numérique, cette formation de deux jours doit permettre aux photographes d’appréhender différemment leur reflex lors de la capture vidéo.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/video-realiser-une-video-avec-un-reflex</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/realiser-video/image-vignette2/2131175-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Logiciels">
+		<titre>LIGHTROOM - MAÎTRISEZ LES BASES</titre>
+		<description>Cette formation  met l'accent sur les deux principaux modules : la bibliothèque et le développement. Elle vous permettra de poser de solides fondations pour créer et gérer vos catalogues, et travailler avec une large palette d'outils pour le traitement des photos en RAW et Jpeg</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/lightroom-maitrisez-les-bases</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/lightroom-maitrisez-les-bases/image-vignette/3237-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Logiciels">
+		<titre>PHOTOSHOP : OUTIL DE RETOUCHE</titre>
+		<description>Cette formation s’adresse à tous ceux qui ont besoin de corriger et d’améliorer leurs images. Au travers d’exemples concrets pris dans toutes les disciplines de la photo, nous verrons comment utiliser Photoshop au quotidien et comment appliquer des procédures de retouches simples et efficaces.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/photoshop-outil-de-retouche</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/photoshop-retouche/image-vignette/48036-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Eclairage">
+		<titre>OBJETS MIS EN LUMIÈRE</titre>
+		<description>Cette formation vous apporte les techniques pour mettre des objets en lumières et ce quelle que soit la finalité de vos images : culinaire, pack-shot, créations, vente en ligne…</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/objets-mis-en-lumiere</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/la-photographie-culinaire/image-vignette/3339-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Eclairage">
+		<titre>L'ART DU PORTRAIT EN STUDIO</titre>
+		<description>Cette session d'apprentissage de photographie en studio vous permettra de donner libre cours à votre créativité pour donner à vos portrait le caractère que vous souhaitez.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/portrait-studio</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/l-eclairage-de-studio/image-vignette2/1987315-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Reflex">
+		<titre>MAÎTRISEZ VOTRE REFLEX EXPERT NIKON</titre>
+		<description>Possesseurs de reflex comme le D7200, le D610 ou le D750 vous souhaitez approfondir votre connaissance des possibilités de votre appareil, afin d'en tirer tout le bénéfice possible.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/reflex-expert-nikon</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/reflex-debutant/image-vignette/52450-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Reflex">
+		<titre>MAÎTRISEZ VOTRE REFLEX PROFESSIONNEL NIKON</titre>
+		<description>Lors de cette formation, vous réaliserez un tour exhaustif des commandes et fonctions de votre reflex, accompagné par un expert des boîtiers Nikon.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/reflex-professionnel-nikon</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/maitrisez-votre-reflex-professionnel-nikon/image-vignette-2/2131199-1-fre-FR/image-vignette-2_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Voyage">
+		<titre>SUR LES TRACES DE LA FAUNE ALPESTRE</titre>
+		<description>La pratique de l’affût sera le thème central de cette semaine consacrée à la photo de nature, qui laissera la part belle à la photographie de paysages ou à la macro photographie.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/sur-les-traces-de-la-faune-alpestre</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/sur-les-traces-de-la-faune-alpestre/image-vignette/3285-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Voyage">
+		<titre>NEW YORK, LA VILLE QUI NE DORT JAMAIS</titre>
+		<description>Une ville mythique, cosmopolite, magnifique, délirante, audacieuse, branchée, avant-gardiste, joyeuse, déjantée et combien d’autres adjectifs encore pour qualifier la Grosse Pomme.
+			Et autant de défis pour le photographe qui devra traduire ces adjectifs en images !</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/new-york</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/new-york-la-ville-qui-ne-dort-jamais/image-vignette/3289-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+	<formation type="Voyage">
+		<titre>INDE : DES TIGRES ET DES HOMMES</titre>
+		<description>Dans le cadre du Parc national de Corbett, aux confins de l’Himalaya, nous suivrons la trace des grands photographes de nature et réaliserons des images de paysages et d’animaux libres, farouches dans leur environnement naturel.</description>
+		<urlDetails>https://iamyourstory.fr/nikon-school/catalogue-formations/inde-des-tigres-et-des-hommes</urlDetails>
+		<image>https://iamyourstory.fr/var/nikon/storage/images/media/nikon-school/formations/safari-en-inde-des-tigres-et-des-hommes/image-vignette/3798-1-fre-FR/image-vignette_nikon_medium.jpg</image>
+	</formation>
+</formations>

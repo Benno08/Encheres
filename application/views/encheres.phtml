@@ -1,0 +1,50 @@
+<?php
+echo template(
+    'partials/common/header.phtml',
+    [
+        'title' => 'Enchères',
+        'joueur' => $joueur
+    ]
+);
+?>
+<div class="container" id="encheres" data-id="<?php echo($partie->getId()); ?>">
+    <div id="listingLots">
+
+    </div>
+    <h1>Enchères session #<?php echo($partie->getId()); ?></h1>
+    <div id="timeContainer">
+        <div id="remainingTime"></div>
+    </div>
+    <div id="lotContainer" class="textCenter">
+        <h2>LOT N°</h2>
+        <div id="lot">
+            <img src="" alt="Lot" />
+            <div id="titre">Lot</div>
+            <div id="description">Description du lot</div>
+            <div class="mt10" id="enchereMin">Enchère minimale : <span id="enchereMinimale">0 €</span></div>
+            <div class="prixRevente mt10">Valeur de revente (estimation) : <span id="valeurRevente">0 €</span></div>
+        </div>
+        <div id="meilleureOffreContainer" class="textCenter">
+            <h2>Meilleure offre : </h2>
+            <div id="meilleureOffre">
+                <div class="status orange"></div> <img id="meilleureOffreImage" src="" alt="" /> <span id="meilleureOffreName">En attente</span>
+            </div>
+        </div>
+        <div id="monOffreContainer" class="textCenter">
+            <h2>Enchérir : </h2>
+            <div id="monOffre">
+                <div id="enchereStatusMessage" class="notvisible mb10"></div>
+                <form action="" method="post" name="encherir">
+                    <input type="number" class="textRight" name="montant" id="montant" value="0" disabled /><span class="button disabled" id="submitEnchere">GO</span>
+                    <input type="hidden" name="joueurId" value="<?php echo($joueur->getId()); ?>" />
+                    <input type="hidden" name="lotId" id="lotId" value="" />
+                    <input type="hidden" name="partieId" value="<?php echo($partie->getId()); ?>" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="info"></div>
+</div>
+
+<script type="text/javascript" src="<?php echo baseUrl('medias/scripts/main.js'); ?>"></script>
+<?php echo template('partials/common/footer.phtml'); ?>
