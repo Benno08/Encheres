@@ -91,7 +91,11 @@ class Manche
 
         return $item;
     }
-
+    
+    /**
+     * @param int $limit
+     * @return array
+     */
     public function prepareLots($limit = 10)
     {
         $items = [];

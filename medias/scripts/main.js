@@ -18,6 +18,7 @@ $(document).ready(function()
     evtSource.addEventListener('lot', lotHandler, false);
     evtSource.addEventListener('enchere', enchereHandler, false);
     evtSource.addEventListener('finenchere', finenchereHandler, false);
+    evtSource.addEventListener('finmanche', finmancheHandler, false);
 
     $('#submitEnchere').click(submitEnchere);
     $('#submitEnchere').submit(function(e) {
@@ -42,6 +43,8 @@ var lotHandler = function(e) {
     $('#meilleureOffreImage').attr('src', 'pending.png');
     $('#meilleureOffre .status').removeClass('red').removeClass('green').addClass('orange');
     $('#monOffreContainer').removeClass('invisible');
+    $('#lotContainer').removeClass('hidden');
+    $('#resultats').addClass('hidden');
 };
 
 var enchereHandler = function(e) {
@@ -86,24 +89,27 @@ var finenchereHandler = function(e) {
     $('#monOffreContainer').addClass('invisible');
 
     // MAJ Capital joueur
+    updateCapitalJoueur();
+};
+
+var finmancheHandler = function(e) {
+    var data = JSON.parse(e.data);
+
     $.ajax({
         async: false,
         cache: false,
-        dataType: 'json',
         method: 'post',
-        url: 'capitaljoueur',
-        data: {'joueurId': joueurId},
-        timeout: 1000
-    }).fail(function()
-    {
-
+        url: 'resultats',
+        data: {'mancheId': data.mancheId},
+        timeout: 2000
     }).done(function(data)
     {
-        if(data.status == 'OK')
-        {
-            $('#capital').html(data.capital);
-        }
+        $('#lotContainer').addClass('hidden');
+        $('#resultats').html(data).removeClass('hidden');
     });
+
+    // MAJ Capital joueur
+    updateCapitalJoueur();
 };
 
 var submitEnchere = function()
@@ -137,3 +143,24 @@ var submitEnchere = function()
         });
     }
 };
+
+function updateCapitalJoueur() {
+    $.ajax({
+        async: false,
+        cache: false,
+        dataType: 'json',
+        method: 'post',
+        url: 'capitaljoueur',
+        data: {'joueurId': joueurId},
+        timeout: 1000
+    }).fail(function()
+    {
+
+    }).done(function(data)
+    {
+        if(data.status == 'OK')
+        {
+            $('#capital').html(data.capital);
+        }
+    });
+}

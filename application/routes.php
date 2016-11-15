@@ -11,3 +11,6 @@ $app->post('/encherir', '\App\Controller\MainController:postEnchere')->setName('
 
 // Page présentant les enchères
 $app->post('/capitaljoueur', '\App\Controller\MainController:getCapitalJoueur')->setName('CAPITAL_JOUEUR');
+
+// Page présentant les résultats
+$app->post('/resultats', '\App\Controller\MainController:getResultatsManche')->setName('RESULTATS');

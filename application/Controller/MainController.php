@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\Joueur;
 use App\Model\Lot;
 use App\Model\Enchere;
+use App\Model\Manche;
 use App\Model\Partie;
 use App\Model\Prospect;
 use Slim\Http\Request;
@@ -155,5 +156,24 @@ class MainController
         }
 
         return $response->withJson($dataResponse);
+    }
+
+    /**
+     * @param Request  $request
+     * @param Response $response
+     * @param array    $args
+     * @return Response
+     */
+    public function getResultatsManche($request, Response $response, $args)
+    {
+        $mancheId = $request->getParsedBodyParam('mancheId');
+
+        /**
+         * @var Manche $manche
+         */
+        $manche = Manche::getMancheFromId($mancheId);
+
+
+        return di('renderer')->render($response, 'resultats.phtml', $args);
     }
 }

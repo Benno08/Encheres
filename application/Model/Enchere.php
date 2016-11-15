@@ -120,6 +120,32 @@ class Enchere
     }
 
     /**
+     * @param Manche $manche
+     * @return array[Enchere]
+     */
+    public static function getMaxEncheresForManche($manche)
+    {
+        $items = [];
+
+        $query = 'SELECT * FROM Enchere WHERE mancheId = :mancheId GROUP BY lotId, amount ORDER BY amount DESC;';
+        $sth = db()->prepare($query);
+        $sth->bindValue(':mancheId', $manche->getId());
+
+        if($sth->execute())
+        {
+            $rows = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+            foreach($rows as $row)
+            {
+                $joueur = Joueur::getJoueurFromId($row['joueurId']);
+                $item = new Enchere($row['id'], $joueur, $manche, $lot, $row['amount']);
+            }
+        }
+
+        return $items;
+    }
+
+    /**
      * @param Lot $lot
      * @param Manche $manche
      * @param Joueur $joueur
