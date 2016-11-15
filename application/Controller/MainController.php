@@ -56,7 +56,7 @@ class MainController
             }
         }
 
-        $_SESSION['joueur'] = $joueur;
+        $_SESSION['joueur'] = serialize($joueur);
 
         $args['partie'] = $partie;
         $args['joueur'] = $joueur;

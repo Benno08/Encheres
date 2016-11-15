@@ -1,10 +1,12 @@
 <?php
+session_start();
 
 use Slim\App;
 use App\Model\Partie;
 use App\Model\Seance;
 use App\Model\Lot;
 use App\Model\Enchere;
+use App\Model\Joueur;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -17,23 +19,34 @@ require __DIR__ . '/application/dependencies.php';
 require __DIR__ . '/application/functions.php';
 
 $partieId = filter_input(INPUT_GET, 'partieId', FILTER_VALIDATE_INT);
-error_log('Partie id = '  . $partieId);
 $partie = Partie::getPartieFromId($partieId);
-$seance = new Seance($partie);
-$numberFormatter = new \NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
-$numberFormatter->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
+
+$joueur = unserialize($_SESSION['joueur']);
+
+if(!empty($joueur) && $partie->getJoueur1()->getId() == $joueur->getId())
+    $isMaster = true;
+else
+    $isMaster = false;
+
+if($isMaster)
+{
+    $seance = new Seance($partie);
+    $numberFormatter = new \NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
+    $numberFormatter->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
+    $counter = Seance::TEMPS_PAR_RESULTAT_MANCHE;
+}
 
 header("Content-Type: text/event-stream");
 header("Cache-Control: no-cache");
-ob_end_clean();
-ob_implicit_flush();
+//ob_end_clean();
+//ob_implicit_flush();
 
-$counter = Seance::TEMPS_PAR_RESULTAT_MANCHE;
 while(true)
 {
-    // Si jeu pas en pause
-//    if(true)
-//    {
+    // Si user master
+    if($isMaster)
+    {
+        ob_start();
         $counter--;
 
         if($counter == 0)
@@ -46,13 +59,14 @@ while(true)
                 $counter = $seance::TEMPS_PAR_ENCHERE;
                 $lot = $seance->getLot();
                 echo "event: lot\n";
-                echo 'data: ' . json_encode(['id' => $lot->getId(),
-                                             'name' => $lot->getName(),
-                                             'description' => $lot->getDescription(),
-                                             'image' => $lot->getImage(),
-                                             'startingStake' => $numberFormatter->format($lot->getStartingStake()),
+                echo 'data: ' . json_encode(['id'                  => $lot->getId(),
+                                             'numero'              => $seance->getNumeroEnchereMancheCourante(),
+                                             'name'                => $lot->getName(),
+                                             'description'         => $lot->getDescription(),
+                                             'image'               => $lot->getImage(),
+                                             'startingStake'       => $numberFormatter->format($lot->getStartingStake()),
                                              'startingStakeNumber' => $lot->getStartingStake(),
-                                             'resellPrice' => $numberFormatter->format($lot->getResellPrice())]);
+                                             'resellPrice'         => $numberFormatter->format($lot->getResellPrice())]);
                 echo "\n\n";
             }
             else if($currentStep == Seance::RESULTAT_ENCHERE) // Fin d'enchère
@@ -65,13 +79,13 @@ while(true)
                 echo "event: finenchere\n";
                 if(!is_null($meilleureEnchere))
                 {
-                    echo "data:" . json_encode(['encherisseurId'  => $meilleureEnchere->getJoueur()->getId(),
+                    echo "data:" . json_encode(['encherisseurId'    => $meilleureEnchere->getJoueur()->getId(),
                                                 'encherisseurName'  => $meilleureEnchere->getJoueur()->getName(),
                                                 'encherisseurImage' => $meilleureEnchere->getJoueur()->getImage()]) . "\n\n";
                 }
                 else
                 {
-                    echo "data:" . json_encode(['encherisseurId'  => 0,
+                    echo "data:" . json_encode(['encherisseurId'    => 0,
                                                 'encherisseurName'  => 'Aucun enchérisseur',
                                                 'encherisseurImage' => 'none.png']) . "\n\n";
                 }
@@ -107,7 +121,7 @@ while(true)
                 else
                 {
                     echo "data:" . json_encode(['encherisseurId' => 0,
-                                               'tempsRestant' => $counter]) . "\n\n";
+                                                'tempsRestant'   => $counter]) . "\n\n";
                 }
             }
             else
@@ -119,7 +133,17 @@ while(true)
                 echo "\n\n";
             }
         }
-//    }
+
+        $output = ob_get_contents();
+        ob_end_flush();
+        file_put_contents('./data/update' . $partieId, $output, LOCK_EX);
+    }
+    else
+    {
+        echo file_get_contents('./data/update' . $partieId);
+    }
+    ob_flush();
+    flush();
 
     sleep(1);
 }

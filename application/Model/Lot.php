@@ -9,6 +9,8 @@
 namespace App\Model;
 
 
+use Cocur\Slugify\Slugify;
+
 class Lot
 {
     protected $id;
@@ -167,7 +169,10 @@ class Lot
      */
     public function getImage()
     {
-        return $this->image;
+        if(is_null($this->image))
+            return 'medias/images/items/' . Slugify::create()->slugify($this->name) . '.jpg';
+        else
+            return $this->image;
     }
 
     /**

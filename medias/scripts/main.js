@@ -19,11 +19,13 @@ $(document).ready(function()
     evtSource.addEventListener('enchere', enchereHandler, false);
     evtSource.addEventListener('finenchere', finenchereHandler, false);
     evtSource.addEventListener('finmanche', finmancheHandler, false);
+    evtSource.addEventListener('finpartie', finmancheHandler, false);
 
     $('#submitEnchere').click(submitEnchere);
     $('#submitEnchere').submit(function(e) {
         submitEnchere();
         e.preventDefault();
+        return false;
     });
 });
 
@@ -31,19 +33,22 @@ var lotHandler = function(e) {
     var data = JSON.parse(e.data);
 
     $('#lotId').val(data.id);
+    $('#numeroLot').html(data.numero);
     $('#lot #titre').html(data.name);
     $('#lot #description').html(data.description);
     $('#lot #enchereMinimale').html(data.startingStake);
     $('#lot #valeurRevente').html(data.resellPrice);
+    $('#lot #imageLot').attr('src', data.image);
+    $('#lot #imageLot').removeClass('hidden');
     $('#montant').prop('disabled', false);
     $('#montant').val(data.startingStakeNumber);
     $('#submitEnchere').removeClass('disabled');
     $('#remainingTime').removeClass('orange').removeClass('red');
     $('#meilleureOffreName').html("En attente");
-    $('#meilleureOffreImage').attr('src', 'pending.png');
+    $('#meilleureOffreImage').addClass('hidden').attr('src', '');
     $('#meilleureOffre .status').removeClass('red').removeClass('green').addClass('orange');
     $('#monOffreContainer').removeClass('invisible');
-    $('#lotContainer').removeClass('hidden');
+    $('#enchereContainer').removeClass('hidden');
     $('#resultats').addClass('hidden');
 };
 
@@ -53,7 +58,7 @@ var enchereHandler = function(e) {
     if(data.encherisseurId != 0)
     {
         $('#meilleureOffreName').html(data.encherisseurName);
-        $('#meilleureOffreImage').attr('src', data.encherisseurImage);
+        $('#meilleureOffreImage').attr('src', data.encherisseurImage).removeClass('hidden');
         var status = (data.encherisseurId == joueurId) ? 'green' : 'red';
         $('#meilleureOffre .status').removeClass('orange').removeClass('red').removeClass('green');
         $('#meilleureOffre .status').addClass(status);
@@ -104,12 +109,16 @@ var finmancheHandler = function(e) {
         timeout: 2000
     }).done(function(data)
     {
-        $('#lotContainer').addClass('hidden');
+        $('#enchereContainer').addClass('hidden');
         $('#resultats').html(data).removeClass('hidden');
     });
 
     // MAJ Capital joueur
     updateCapitalJoueur();
+};
+
+var finpartieHandler = function() {
+    evtSource.close();
 };
 
 var submitEnchere = function()

@@ -1,5 +1,5 @@
 .button {
-    @include fontLt;
+    @include font;
     background: $mainColor;
     color: $white;
     font-size: $fontL;

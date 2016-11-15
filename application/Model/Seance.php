@@ -208,6 +208,6 @@ class Seance
      */
     public function getLot()
     {
-        return $this->lots[$this->numeroMancheCourante - 1];
+        return $this->lots[$this->numeroEnchereMancheCourante - 1];
     }
 }

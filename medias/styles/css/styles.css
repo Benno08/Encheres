@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0;
   margin: 0;
@@ -105,26 +106,9 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-@font-face {
-  font-family: 'Frutiger-Light';
-  src: url("../../fonts/Frutiger45Light.eot");
-  src: url("../../fonts/Frutiger45Light.eot?#iefix") format("embedded-opentype"), url("../../fonts/Frutiger45Light.woff") format("woff"), url("../../fonts/Frutiger45Light.ttf") format("truetype"), url("../../fonts/Frutiger45Light.svg#Frutiger45Light") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'Frutiger-Roman';
-  src: url("../../fonts/Frutiger55Roman.eot");
-  src: url("../../fonts/Frutiger55Roman.eot?#iefix") format("embedded-opentype"), url("../../fonts/Frutiger55Roman.woff") format("woff"), url("../../fonts/Frutiger55Roman.ttf") format("truetype"), url("../../fonts/Frutiger55Roman.svg#Frutiger55Roman") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'Frutiger-Bold';
-  src: url("../../fonts/Frutiger65Bold.eot");
-  src: url("../../fonts/Frutiger65Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Frutiger65Bold.woff") format("woff"), url("../../fonts/Frutiger65Bold.ttf") format("truetype"), url("../../fonts/Frutiger65Bold.svg#Frutiger65Bold") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 h1 {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   padding: 20px 0;
   font-size: 30px;
   font-weight: normal;
@@ -133,7 +117,8 @@ h1 {
   color: #111; }
 
 h2 {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   padding: 10px 0;
   font-size: 20px;
   font-weight: normal;
@@ -142,7 +127,8 @@ h2 {
   color: #111; }
 
 h3 {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   padding: 5px 0;
   font-size: 16px;
   font-weight: normal;
@@ -150,7 +136,8 @@ h3 {
   color: #111; }
 
 h4 {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   font-size: 13px;
   font-weight: normal;
   text-transform: uppercase;
@@ -168,7 +155,8 @@ a, .link {
   cursor: pointer; }
 
 label {
-  font-family: 'Frutiger-Roman', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
   font-size: 16px;
   color: #6d6d6d;
   margin: 8px 0 2px 0;
@@ -177,11 +165,13 @@ label {
     color: #d00101; }
 
 strong, b {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif; }
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700; }
 
 body.node-type-news-item h2,
 body.node-type-job-offer h2 {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   font-size: 80px;
   font-weight: normal;
   line-height: 80px;
@@ -190,7 +180,8 @@ body.node-type-job-offer h2 {
   word-wrap: break-word; }
 body.node-type-news-item h1,
 body.node-type-job-offer h1 {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   font-size: 30px;
   font-weight: normal;
   line-height: 30px;
@@ -215,8 +206,8 @@ body.node-type-job-offer h1 {
   color: #FFF; }
 
 .button {
-  font-family: 'Frutiger-Light', Arial, Helvetica, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
   background: #d3002d;
   color: #fff;
   font-size: 16px;
@@ -1453,14 +1444,17 @@ body.node-type-job-offer h1 {
 html,
 body,
 table {
-  font-family: 'Frutiger-Light', Arial, Helvetica, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
   font-size: 13px;
   color: #6d6d6d;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
+
+body {
+  background: #eeeeee; }
 
 hr {
   border: 0;
@@ -1492,14 +1486,16 @@ input[type=email] {
     color: #919191; }
 
 header {
-  height: 112px; }
+  margin-bottom: 20px;
+  background: #6d6d6d;
+  height: 100px; }
   header #joueurDetails {
     float: left;
     background: #111;
     color: #f3f3f3;
     width: 30%;
     padding: 20px;
-    height: 100%; }
+    height: 112px; }
     header #joueurDetails #joueur {
       display: block;
       font-size: 16px;
@@ -1542,13 +1538,17 @@ input[name=partieId] {
   .joueurselector:hover {
     background-color: #ffbac8; }
   .joueurselector.selected {
-    font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
     border-width: 2px;
     background-color: #ffa0b4; }
 
 #encheres #timeContainer {
   width: 100%;
-  height: 4px; }
+  height: 4px;
+  border: 1px #111 solid;
+  border-bottom: none;
+  background: white; }
   #encheres #timeContainer #remainingTime {
     transition: all 1s ease-in-out;
     width: 100%;
@@ -1560,21 +1560,29 @@ input[name=partieId] {
       background-color: #d00101; }
 #encheres #lotContainer, #encheres #meilleureOffreContainer, #encheres #monOffreContainer {
   margin: 0 0 30px 0; }
-#encheres #lotContainer #titre {
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
-  font-size: 20px; }
-#encheres #lotContainer #description {
-  color: #d9dade; }
-#encheres #lotContainer #valeurRevente {
-  color: #919191;
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif; }
-#encheres #lotContainer #imageLot {
-  width: 150px;
-  border: #111; }
+#encheres #lotContainer {
+  border: 1px #111 solid;
+  padding: 0 20px 20px 20px;
+  width: 100%;
+  background: #fff; }
+  #encheres #lotContainer #titre {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 20px; }
+  #encheres #lotContainer #description {
+    color: #919191; }
+  #encheres #lotContainer #valeurRevente {
+    color: #919191;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700; }
+  #encheres #lotContainer #imageLot {
+    height: 150px;
+    border: #6d6d6d 1px solid; }
 #encheres #enchereStatusMessage {
   opacity: 1;
   transition: all 0.2s ease-in-out;
-  font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   height: 16px;
   min-height: 16px; }
   #encheres #enchereStatusMessage.OK {
@@ -1599,7 +1607,9 @@ input[name=partieId] {
   #encheres #meilleureOffreContainer #meilleureOffreImage {
     border-radius: 4px;
     border: 1px solid #111;
-    margin: 0 5px; }
+    margin: 0 5px;
+    width: 80px;
+    vertical-align: middle; }
 #encheres input[name=montant] {
   width: 200px; }
 #encheres #submitEnchere {

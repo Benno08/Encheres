@@ -195,6 +195,6 @@ class Joueur
     public function getImage()
     {
         $slugify = new Slugify();
-        return $slugify->slugify($this->name) . '.png';
+        return 'medias/images/players/' . $slugify->slugify($this->name) . '.jpg';
     }
 }

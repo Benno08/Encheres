@@ -21,7 +21,7 @@ $container['mailer'] = function($c)
     if(ENVIRONMENT == 'PREPROD')
     {
         $mailTransport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
-        $mailTransport->setUsername('envoi@peoleo.fr')->setPassword('peoleo123');
+        $mailTransport->setUsername('')->setPassword('');
     }
     else
         $mailTransport = \Swift_MailTransport::newInstance();

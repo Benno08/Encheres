@@ -1,20 +1,10 @@
 // --- FONT ---
-@mixin fontLt{
-    font-family : 'Frutiger-Light', Arial, Helvetica, sans-serif;
-    font-weight:normal;
-}
-
 @mixin font{
-    font-family : 'OpenSans-Regular', Arial, Helvetica, sans-serif;
-    font-weight:normal;
+    font-family : 'Roboto Slab', serif;
+    font-weight: 400;
 }
 
 @mixin fontBd{
-    font-family : 'Frutiger-Bold', Arial, Helvetica, sans-serif;
-    //font-weight: bold;
-}
-
-@mixin fontRn{
-    font-family : 'Frutiger-Roman', Arial, Helvetica, sans-serif;
-    //font-weight: bold;
+    font-family : 'Roboto Slab', serif;
+    font-weight: 700;
 }
