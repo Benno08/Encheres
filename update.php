@@ -38,8 +38,8 @@ if($isMaster)
 
 header("Content-Type: text/event-stream");
 header("Cache-Control: no-cache");
-//ob_end_clean();
-//ob_implicit_flush();
+ob_end_clean();
+ob_implicit_flush();
 
 while(true)
 {
@@ -142,8 +142,6 @@ while(true)
     {
         echo file_get_contents('./data/update' . $partieId);
     }
-    ob_flush();
-    flush();
 
     sleep(1);
 }
