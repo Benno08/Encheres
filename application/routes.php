@@ -8,3 +8,6 @@ $app->post('/encheres', '\App\Controller\MainController:joinSession')->setName('
 
 // Soumission d'une enchère
 $app->post('/encherir', '\App\Controller\MainController:postEnchere')->setName('ENCHERIR');
+
+// Page présentant les enchères
+$app->post('/capitaljoueur', '\App\Controller\MainController:getCapitalJoueur')->setName('CAPITAL_JOUEUR');

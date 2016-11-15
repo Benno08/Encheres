@@ -44,8 +44,7 @@ while(true)
             if($currentStep == Seance::ENCHERE)
             {
                 $counter = $seance::TEMPS_PAR_ENCHERE;
-                $lot = Lot::getLotFromId(1);
-                $seance->setLot($lot);
+                $lot = $seance->getLot();
                 echo "event: lot\n";
                 echo 'data: ' . json_encode(['id' => $lot->getId(),
                                              'name' => $lot->getName(),
@@ -83,6 +82,13 @@ while(true)
                 echo "event: finmanche\n";
                 echo 'data: ' . json_encode(['mancheId' => $seance->getManche()->getId()]);
                 echo "\n\n";
+            }
+            else if($currentStep == Seance::PAUSE) // Fin de la partie
+            {
+                echo "event: finpartie\n";
+                echo 'data: ' . json_encode(['partieId' => $seance->getPartie()->getId()]);
+                echo "\n\n";
+                exit();
             }
         }
         else

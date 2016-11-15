@@ -1,14 +1,26 @@
 header {
     height: 112px;
     #joueurDetails {
-        display: inline-block;
+        float: left;
         background: $black;
         color:$lightgrey;
         width: 30%;
+        padding: 20px;
         height: 100%;
 
         #joueur {
-            
+            display: block;
+            font-size: $fontL;
+            margin-bottom: 8px;
+        }
+
+        #capital {
+            display: inline-block;
+            padding: 4px 10px;
+            border: $darkgrey 1px solid;
+            background: $black;
+            font-size: $fontXL;
+            font-family: monospace;
         }
     }
 }

@@ -130,7 +130,7 @@ h1 {
   font-weight: normal;
   line-height: 30px;
   text-transform: uppercase;
-  color: #000; }
+  color: #111; }
 
 h2 {
   font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
@@ -139,7 +139,7 @@ h2 {
   font-weight: normal;
   line-height: 30px;
   text-transform: uppercase;
-  color: #000; }
+  color: #111; }
 
 h3 {
   font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
@@ -147,14 +147,14 @@ h3 {
   font-size: 16px;
   font-weight: normal;
   text-transform: uppercase;
-  color: #000; }
+  color: #111; }
 
 h4 {
   font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: normal;
   text-transform: uppercase;
-  color: #000;
+  color: #111;
   padding: 0; }
 
 p {
@@ -174,7 +174,7 @@ label {
   margin: 8px 0 2px 0;
   display: inline-block; }
   label.error {
-    color: #cf0304; }
+    color: #d00101; }
 
 strong, b {
   font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif; }
@@ -186,7 +186,7 @@ body.node-type-job-offer h2 {
   font-weight: normal;
   line-height: 80px;
   text-transform: uppercase;
-  color: #000;
+  color: #111;
   word-wrap: break-word; }
 body.node-type-news-item h1,
 body.node-type-job-offer h1 {
@@ -195,7 +195,7 @@ body.node-type-job-offer h1 {
   font-weight: normal;
   line-height: 30px;
   text-transform: uppercase;
-  color: #000;
+  color: #111;
   padding: 10px 0; }
 
 ::-moz-selection {
@@ -217,7 +217,7 @@ body.node-type-job-offer h1 {
 .button {
   font-family: 'Frutiger-Light', Arial, Helvetica, sans-serif;
   font-weight: normal;
-  background: #68c9fe;
+  background: #d3002d;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -230,8 +230,8 @@ body.node-type-job-offer h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out; }
   .button:hover, .button:active {
-    background-color: #81d2fe;
-    text-shadow: 0px 1px 0px #68c9fe; }
+    background-color: #ed0032;
+    text-shadow: 0px 1px 0px #d3002d; }
   .button.disabled {
     background: #919191;
     color: #f3f3f3;
@@ -285,7 +285,7 @@ body.node-type-job-offer h1 {
     left: 3px;
     transition-duration: 300ms; }
   .switch.error {
-    background: #cf0304; }
+    background: #d00101; }
     .switch.error:after {
       background: #fff; }
   .switch.switchOn {
@@ -295,7 +295,7 @@ body.node-type-job-offer h1 {
     .switch.switchOn:after {
       left: 9px !important;
       width: 14px;
-      background: #68c9fe !important; }
+      background: #d3002d !important; }
 
 .smallswitch {
   display: inline-block;
@@ -322,7 +322,7 @@ body.node-type-job-offer h1 {
     left: 3px;
     transition-duration: 300ms; }
   .smallswitch.error {
-    background: #cf0304; }
+    background: #d00101; }
     .smallswitch.error:after {
       background: #fff; }
   .smallswitch.switchOn {
@@ -332,7 +332,7 @@ body.node-type-job-offer h1 {
     .smallswitch.switchOn:after {
       left: 9px !important;
       width: 18px;
-      background: #68c9fe !important; }
+      background: #d3002d !important; }
 
 .virtualcheck {
   background: #fff;
@@ -342,7 +342,7 @@ body.node-type-job-offer h1 {
   display: inline-block;
   margin-top: 9px;
   line-height: 20px;
-  color: #000;
+  color: #111;
   font-weight: bold;
   cursor: pointer; }
   .virtualcheck.checked:before {
@@ -1470,9 +1470,10 @@ hr {
 input[type=text],
 input[type=number],
 input[type=email] {
+  outline: none;
   border: 1px solid #d9dade;
   font-size: 20px;
-  color: #000;
+  color: #111;
   padding: 8px 6px 9px 6px;
   display: inline-block;
   width: 100%;
@@ -1484,7 +1485,7 @@ input[type=email] {
   input[type=text].error,
   input[type=number].error,
   input[type=email].error {
-    border-color: #cf0304; }
+    border-color: #d00101; }
   input[type=text][disabled],
   input[type=number][disabled],
   input[type=email][disabled] {
@@ -1493,11 +1494,23 @@ input[type=email] {
 header {
   height: 112px; }
   header #joueurDetails {
-    display: inline-block;
-    background: #000;
+    float: left;
+    background: #111;
     color: #f3f3f3;
     width: 30%;
+    padding: 20px;
     height: 100%; }
+    header #joueurDetails #joueur {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px; }
+    header #joueurDetails #capital {
+      display: inline-block;
+      padding: 4px 10px;
+      border: #6d6d6d 1px solid;
+      background: #111;
+      font-size: 30px;
+      font-family: monospace; }
 
 .container {
   -webkit-overflow-scrolling: auto; }
@@ -1505,12 +1518,12 @@ header {
 section {
   background: #fff; }
   section .uppercase {
-    color: #000;
+    color: #111;
     text-transform: uppercase; }
 
 .error {
   text-align: center;
-  color: #cf0304; }
+  color: #d00101; }
 
 input[name=partieId] {
   width: 100px;
@@ -1520,18 +1533,18 @@ input[name=partieId] {
   display: inline-block;
   margin: 10px 20px;
   padding: 10px;
-  border: #68c9fe 1px solid;
+  border: #d3002d 1px solid;
   border-radius: 3px;
-  color: #68c9fe;
+  color: #d3002d;
   cursor: pointer;
   font-size: 20px;
   min-width: 150px; }
   .joueurselector:hover {
-    background-color: #e7f6ff; }
+    background-color: #ffbac8; }
   .joueurselector.selected {
     font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif;
     border-width: 2px;
-    background-color: #cdedff; }
+    background-color: #ffa0b4; }
 
 #encheres #timeContainer {
   width: 100%;
@@ -1544,7 +1557,7 @@ input[name=partieId] {
     #encheres #timeContainer #remainingTime.orange {
       background-color: orange; }
     #encheres #timeContainer #remainingTime.red {
-      background-color: #cf0304; }
+      background-color: #d00101; }
 #encheres #lotContainer, #encheres #meilleureOffreContainer, #encheres #monOffreContainer {
   margin: 0 0 30px 0; }
 #encheres #lotContainer #titre {
@@ -1555,6 +1568,9 @@ input[name=partieId] {
 #encheres #lotContainer #valeurRevente {
   color: #919191;
   font-family: 'Frutiger-Bold', Arial, Helvetica, sans-serif; }
+#encheres #lotContainer #imageLot {
+  width: 150px;
+  border: #111; }
 #encheres #enchereStatusMessage {
   opacity: 1;
   transition: all 0.2s ease-in-out;
@@ -1564,7 +1580,7 @@ input[name=partieId] {
   #encheres #enchereStatusMessage.OK {
     color: #96c829 !important; }
   #encheres #enchereStatusMessage.ERROR {
-    color: #cf0304 !important; }
+    color: #d00101 !important; }
   #encheres #enchereStatusMessage.notvisible {
     opacity: 0; }
 #encheres #meilleureOffreContainer {
@@ -1575,11 +1591,15 @@ input[name=partieId] {
     height: 20px;
     border-radius: 10px; }
     #encheres #meilleureOffreContainer .status.red {
-      background: #cf0304; }
+      background: #d00101; }
     #encheres #meilleureOffreContainer .status.orange {
       background: orange; }
     #encheres #meilleureOffreContainer .status.green {
       background: #96c829; }
+  #encheres #meilleureOffreContainer #meilleureOffreImage {
+    border-radius: 4px;
+    border: 1px solid #111;
+    margin: 0 5px; }
 #encheres input[name=montant] {
   width: 200px; }
 #encheres #submitEnchere {

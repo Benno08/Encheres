@@ -4,11 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitcd48018555cb949fd219abc9f924aea4
+class ComposerStaticInitbaedfdc262bb85f34b3b223f264667d6
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
@@ -16,7 +15,7 @@ class ComposerStaticInitcd48018555cb949fd219abc9f924aea4
         'S' => 
         array (
             'Slim\\Views\\' => 11,
-            'Slim\\Csrf\\' => 10,
+            'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -36,6 +35,10 @@ class ComposerStaticInitcd48018555cb949fd219abc9f924aea4
         array (
             'FastRoute\\' => 10,
         ),
+        'C' => 
+        array (
+            'Cocur\\Slugify\\' => 14,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -47,9 +50,9 @@ class ComposerStaticInitcd48018555cb949fd219abc9f924aea4
         array (
             0 => __DIR__ . '/..' . '/slim/php-view/src',
         ),
-        'Slim\\Csrf\\' => 
+        'Slim\\Middleware\\' => 
         array (
-            0 => __DIR__ . '/..' . '/slim/csrf/src',
+            0 => __DIR__ . '/..' . '/tuupola/slim-basic-auth/src',
         ),
         'Slim\\' => 
         array (
@@ -75,6 +78,10 @@ class ComposerStaticInitcd48018555cb949fd219abc9f924aea4
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'Cocur\\Slugify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cocur/slugify/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/application',
@@ -94,9 +101,9 @@ class ComposerStaticInitcd48018555cb949fd219abc9f924aea4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitcd48018555cb949fd219abc9f924aea4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitcd48018555cb949fd219abc9f924aea4::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitcd48018555cb949fd219abc9f924aea4::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbaedfdc262bb85f34b3b223f264667d6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbaedfdc262bb85f34b3b223f264667d6::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbaedfdc262bb85f34b3b223f264667d6::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

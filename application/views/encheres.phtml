@@ -18,7 +18,7 @@ echo template(
     <div id="lotContainer" class="textCenter">
         <h2>LOT N°</h2>
         <div id="lot">
-            <img src="" alt="Lot" />
+            <img id="imageLot" src="" alt="Lot" />
             <div id="titre">Lot</div>
             <div id="description">Description du lot</div>
             <div class="mt10" id="enchereMin">Enchère minimale : <span id="enchereMinimale">0 €</span></div>
@@ -30,7 +30,7 @@ echo template(
                 <div class="status orange"></div> <img id="meilleureOffreImage" src="" alt="" /> <span id="meilleureOffreName">En attente</span>
             </div>
         </div>
-        <div id="monOffreContainer" class="textCenter">
+        <div id="monOffreContainer" class="textCenter invisible">
             <h2>Enchérir : </h2>
             <div id="monOffre">
                 <div id="enchereStatusMessage" class="notvisible mb10"></div>

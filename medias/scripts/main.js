@@ -17,6 +17,7 @@ $(document).ready(function()
 
     evtSource.addEventListener('lot', lotHandler, false);
     evtSource.addEventListener('enchere', enchereHandler, false);
+    evtSource.addEventListener('finenchere', finenchereHandler, false);
 
     $('#submitEnchere').click(submitEnchere);
     $('#submitEnchere').submit(function(e) {
@@ -40,6 +41,7 @@ var lotHandler = function(e) {
     $('#meilleureOffreName').html("En attente");
     $('#meilleureOffreImage').attr('src', 'pending.png');
     $('#meilleureOffre .status').removeClass('red').removeClass('green').addClass('orange');
+    $('#monOffreContainer').removeClass('invisible');
 };
 
 var enchereHandler = function(e) {
@@ -65,6 +67,43 @@ var enchereHandler = function(e) {
         $('#remainingTime').addClass('orange');
     else if(data.tempsRestant == 5)
         $('#remainingTime').removeClass('orange').addClass('red');
+};
+
+var finenchereHandler = function(e) {
+    var data = JSON.parse(e.data);
+
+    if(data.encherisseurId != 0)
+    {
+        $('#meilleureOffreName').html(data.encherisseurName);
+        $('#meilleureOffreImage').attr('src', data.encherisseurImage);
+        var status = (data.encherisseurId == joueurId) ? 'green' : 'red';
+        $('#meilleureOffre .status').removeClass('orange').removeClass('red').removeClass('green');
+        $('#meilleureOffre .status').addClass(status);
+    }
+
+    // MAJ Temps restant
+    $('#remainingTime').css('width', 0);
+    $('#monOffreContainer').addClass('invisible');
+
+    // MAJ Capital joueur
+    $.ajax({
+        async: false,
+        cache: false,
+        dataType: 'json',
+        method: 'post',
+        url: 'capitaljoueur',
+        data: {'joueurId': joueurId},
+        timeout: 1000
+    }).fail(function()
+    {
+
+    }).done(function(data)
+    {
+        if(data.status == 'OK')
+        {
+            $('#capital').html(data.capital);
+        }
+    });
 };
 
 var submitEnchere = function()

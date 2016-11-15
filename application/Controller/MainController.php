@@ -134,52 +134,24 @@ class MainController
      * @param array    $args
      * @return Response
      */
-    public function saveOne($request, Response $response, $args)
+    public function getCapitalJoueur($request, Response $response, $args)
     {
-        $firstname = $request->getParsedBodyParam('firstname');
-        $lastname = $request->getParsedBodyParam('lastname');
-        $email = $request->getParsedBodyParam('email');
-        $newsletter = $request->getParsedBodyParam('newsletter', false);
-        $contents = $request->getParsedBodyParam('contents', []);
+        $joueurId = $request->getParsedBodyParam('joueurId');
 
-        $firstname = filter_var($firstname, FILTER_SANITIZE_STRING);
-        $lastname = filter_var($lastname, FILTER_SANITIZE_STRING);
-        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
-        $newsletter = (bool)filter_var($newsletter, FILTER_VALIDATE_BOOLEAN);
-        $contents = filter_var($contents, FILTER_VALIDATE_INT, FILTER_REQUIRE_ARRAY);
+        /**
+         * @var Joueur $joueur
+         */
+        $joueur = Joueur::getJoueurFromId($joueurId);
 
-        if(!$email || $contents === false)
+        if(is_null($joueur))
         {
             $dataResponse = ['status'  => 'ERROR',
-                             'message' => 'Adresse email ou contenus invalides.'];
+                             'message' => 'Joueur invalide.'];
         }
         else
         {
-            if($this->saveProspect($firstname, $lastname, $email, $newsletter, $contents))
-            {
-                // Envoi du mail de confirmation d'inscription
-                $prospect = Prospect::getProspectFromEmail($email);
-                $domain = $request->getUri()->getScheme() . '://' . $request->getUri()->getHost();
-                $emailArgs = ['domain'       => $domain,
-                              'prospect'     => $prospect,
-                              'contents'     => $contents,
-                              'urlReglement' => $domain . di('router')->pathFor('REGLEMENT_PAGE')];
-
-                $message = \Swift_Message::newInstance()
-                                         ->setSubject($firstname != '' ? "Votre participation au jeu concours Nikon" : "Votre sélection de contenus Nikon")
-                                         ->setFrom(['webmaster@nikon.fr' => 'Nikon France'])
-                                         ->setTo($email)
-                                         ->setBody(di('renderer')->fetch('emails/email-confirmation.phtml', $emailArgs), 'text/html');
-
-                mailer()->send($message);
-
-                $dataResponse = ['status' => 'OK'];
-            }
-            else
-            {
-                $dataResponse = ['status'  => 'ERROR',
-                                 'message' => 'Erreur lors de l\'enregistrement.'];
-            }
+            $dataResponse = ['status'  => 'OK',
+                             'capital' => $joueur->getCapital(true)];
         }
 
         return $response->withJson($dataResponse);

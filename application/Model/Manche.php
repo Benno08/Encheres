@@ -92,6 +92,28 @@ class Manche
         return $item;
     }
 
+    public function prepareLots($limit = 10)
+    {
+        $items = [];
+
+        $query = 'SELECT * FROM Lot WHERE id ORDER BY RAND() LIMIT :limit;';
+        $sth = db()->prepare($query);
+        $sth->bindParam(':limit', $limit, \PDO::PARAM_INT);
+
+        if($sth->execute())
+        {
+            $rows = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+            foreach($rows as $row)
+            {
+                $item = new Lot($row['id'], $row['name'], $row['description'], $row['image'], $row['startingStake'], $row['resellPrice']);
+                $items[] = $item;
+            }
+        }
+
+        return $items;
+    }
+
     /**
      * @return mixed
      */

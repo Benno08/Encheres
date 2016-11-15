@@ -35,9 +35,9 @@ class Seance
      */
     protected $manche;
     /**
-     * @var Lot
+     * @var array[Lot]
      */
-    protected $lot = null;
+    protected $lots = null;
 
     /**
      * Seance constructor.
@@ -48,11 +48,12 @@ class Seance
         $manche = new Manche(null, $partie, false);
         $manche->save();
         $this->manche = $manche;
+        $this->lots = $manche->prepareLots(static::ENCHERES_PAR_MANCHE);
     }
 
     public function moveToNextStep()
     {
-        if($this->currentStep == static::RESULTAT_ENCHERE && $this->numeroEnchereMancheCourante == static::ENCHERES_PAR_MANCHE)
+        if($this->currentStep == static::RESULTAT_ENCHERE && $this->numeroEnchereMancheCourante < static::ENCHERES_PAR_MANCHE)
         {
             $this->numeroEnchereMancheCourante++;
             $this->currentStep = static::ENCHERE;
@@ -73,6 +74,7 @@ class Seance
                 $manche = new Manche(null, $this->partie, false);
                 $manche->save();
                 $this->manche = $manche;
+                $this->lots = $manche->prepareLots(static::ENCHERES_PAR_MANCHE);
                 $this->currentStep = static::ENCHERE;
             }
         }
@@ -206,17 +208,6 @@ class Seance
      */
     public function getLot()
     {
-        return $this->lot;
-    }
-
-    /**
-     * @param Lot $lot
-     * @return Seance
-     */
-    public function setLot($lot)
-    {
-        $this->lot = $lot;
-
-        return $this;
+        return $this->lots[$this->numeroMancheCourante - 1];
     }
 }
