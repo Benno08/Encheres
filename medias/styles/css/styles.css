@@ -1548,7 +1548,7 @@ input[name=partieId] {
   height: 4px;
   border: 1px #111 solid;
   border-bottom: none;
-  background: white; }
+  background: #111; }
   #encheres #timeContainer #remainingTime {
     transition: all 1s ease-in-out;
     width: 100%;
@@ -1559,7 +1559,7 @@ input[name=partieId] {
     #encheres #timeContainer #remainingTime.red {
       background-color: #d00101; }
 #encheres #lotContainer, #encheres #meilleureOffreContainer, #encheres #monOffreContainer {
-  margin: 0 0 30px 0; }
+  margin: 0 0 10px 0; }
 #encheres #lotContainer {
   border: 1px #111 solid;
   padding: 0 20px 20px 20px;

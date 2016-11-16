@@ -56,6 +56,7 @@ class MainController
             }
         }
 
+        session_start();
         $_SESSION['joueur'] = serialize($joueur);
 
         $args['partie'] = $partie;
@@ -84,6 +85,7 @@ class MainController
         $joueurId = $request->getParsedBodyParam('joueurId');
         $lotId = $request->getParsedBodyParam('lotId');
         $montant = filter_var($request->getParsedBodyParam('montant'), FILTER_VALIDATE_INT);
+        error_log('1');
 
         /**
          * @var Joueur $joueur

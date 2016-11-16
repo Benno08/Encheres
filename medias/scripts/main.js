@@ -101,7 +101,7 @@ var finmancheHandler = function(e) {
     var data = JSON.parse(e.data);
 
     $.ajax({
-        async: false,
+        async: true,
         cache: false,
         method: 'post',
         url: 'resultats',
@@ -126,7 +126,7 @@ var submitEnchere = function()
     if(!$(this).hasClass('disabled'))
     {
         $.ajax({
-            async: false,
+            async: true,
             cache: false,
             dataType: 'json',
             method: 'post',
@@ -155,7 +155,7 @@ var submitEnchere = function()
 
 function updateCapitalJoueur() {
     $.ajax({
-        async: false,
+        async: true,
         cache: false,
         dataType: 'json',
         method: 'post',
