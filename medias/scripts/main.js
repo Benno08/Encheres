@@ -106,15 +106,15 @@ var finmancheHandler = function(e) {
         method: 'post',
         url: 'resultats',
         data: {'mancheId': data.mancheId},
-        timeout: 2000
+        timeout: 3000
     }).done(function(data)
     {
         $('#enchereContainer').addClass('hidden');
         $('#resultats').html(data).removeClass('hidden');
-    });
 
-    // MAJ Capital joueur
-    updateCapitalJoueur();
+        // MAJ Capital joueur
+        updateCapitalJoueur();
+    });
 };
 
 var finpartieHandler = function() {
@@ -169,7 +169,9 @@ function updateCapitalJoueur() {
     {
         if(data.status == 'OK')
         {
-            $('#capital').html(data.capital);
+            $('#capital').html(data.capital).animate({scale: 1.2}, 250, function() {
+                $('#capital').animate({scale: 1.0}, 50);
+            });
         }
     });
 }

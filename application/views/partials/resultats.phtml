@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \App\Model\Enchere $resultat
+ */
+    foreach($encheres as $resultat):
+        ?>
+    <div class="row resultLine">
+        <div class="col-md-4">
+            <h3><?php echo($resultat->getLot()->getName()); ?></h3>
+            <p><?php echo($resultat->getLot()->getDescription()); ?></p>
+        </div>
+        <div class="col-md-4">
+            <img src="<?php echo($resultat->getJoueur()->getImage()); ?>" alt="<?php echo($resultat->getJoueur()->getName()); ?>"/> <?php echo($resultat->getJoueur()->getName()); ?>
+        </div>
+        <div class="col-md-4">
+            <p>Prix revente : <span class="prixrevente"><?php echo($resultat->getLot()->getResellPrice(true)); ?></span></p>
+            <p>Plus value : <span class="plusvalue <?php echo($resultat->getPlusValue() <= 0 ? 'negative' : ''); ?>"><?php echo($resultat->getPlusValue(true)); ?></span></p>
+        </div>
+    </div>
+<?php endforeach; ?>

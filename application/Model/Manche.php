@@ -58,7 +58,7 @@ class Manche
         else // Si identifiant, mise à jour enregistrement existant
         {
             // Requête préparée
-            $sth = db()->prepare('UPDATE Partie SET   partieId = :partieId,
+            $sth = db()->prepare('UPDATE Manche SET   partieId = :partieId,
                                                       over = :over WHERE id = :id;');
             $sth->bindValue(':id', $this->id);
             $sth->bindValue(':partieId', $this->partie->getId());

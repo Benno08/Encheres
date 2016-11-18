@@ -1604,15 +1604,28 @@ input[name=partieId] {
       background: orange; }
     #encheres #meilleureOffreContainer .status.green {
       background: #96c829; }
-  #encheres #meilleureOffreContainer #meilleureOffreImage {
-    border-radius: 4px;
-    border: 1px solid #111;
-    margin: 0 5px;
-    width: 80px;
-    vertical-align: middle; }
+#encheres .meilleureOffreImage {
+  border-radius: 4px;
+  border: 1px solid #111;
+  margin: 0 5px;
+  width: 80px;
+  vertical-align: middle; }
 #encheres input[name=montant] {
   width: 200px; }
 #encheres #submitEnchere {
   border-radius: 0 3px 3px 0px; }
+#encheres .resultLine {
+  border-bottom: 1px solid #919191; }
+  #encheres .resultLine .prixrevente {
+    color: #919191;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700; }
+  #encheres .resultLine .plusvalue {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #96c829; }
+    #encheres .resultLine .plusvalue.negative {
+      color: #d00101; }
 
 /*# sourceMappingURL=styles.css.map */

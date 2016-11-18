@@ -127,7 +127,7 @@ class Enchere
     {
         $items = [];
 
-        $query = 'SELECT * FROM Enchere WHERE mancheId = :mancheId GROUP BY lotId, amount ORDER BY amount DESC;';
+        $query = 'SELECT * FROM Enchere WHERE mancheId = :mancheId GROUP BY lotId ORDER BY amount DESC;';
         $sth = db()->prepare($query);
         $sth->bindValue(':mancheId', $manche->getId());
 
@@ -138,7 +138,8 @@ class Enchere
             foreach($rows as $row)
             {
                 $joueur = Joueur::getJoueurFromId($row['joueurId']);
-                $item = new Enchere($row['id'], $joueur, $manche, $lot, $row['amount']);
+                $lot = Lot::getLotFromId($row['lotId']);
+                $items[] = new Enchere($row['id'], $joueur, $manche, $lot, $row['amount']);
             }
         }
 
@@ -266,5 +267,19 @@ class Enchere
         $this->amount = $amount;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlusValue($formatted = false)
+    {
+        if($formatted)
+        {
+            $numberFormatter = new \NumberFormatter('fr_FR', \NumberFormatter::CURRENCY);
+            $numberFormatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, 0);
+            return $numberFormatter->format($this->lot->getResellPrice() - $this->amount);
+        }
+        return ($this->lot->getResellPrice() - $this->amount);
     }
 }

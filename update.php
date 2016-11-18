@@ -31,8 +31,6 @@ else
 if($isMaster)
 {
     $seance = new Seance($partie);
-    $numberFormatter = new \NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
-    $numberFormatter->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
     $counter = Seance::TEMPS_PAR_RESULTAT_MANCHE;
 }
 
@@ -64,9 +62,9 @@ while(true)
                                              'name'                => $lot->getName(),
                                              'description'         => $lot->getDescription(),
                                              'image'               => $lot->getImage(),
-                                             'startingStake'       => $numberFormatter->format($lot->getStartingStake()),
+                                             'startingStake'       => $lot->getStartingStake(true),
                                              'startingStakeNumber' => $lot->getStartingStake(),
-                                             'resellPrice'         => $numberFormatter->format($lot->getResellPrice())]);
+                                             'resellPrice'         => $lot->getResellPrice(true)]);
                 echo "\n\n";
             }
             else if($currentStep == Seance::RESULTAT_ENCHERE) // Fin d'enchère

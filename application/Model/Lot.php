@@ -189,8 +189,14 @@ class Lot
     /**
      * @return int
      */
-    public function getStartingStake()
+    public function getStartingStake($formatted = false)
     {
+        if($formatted)
+        {
+            $numberFormatter = new \NumberFormatter('fr_FR', \NumberFormatter::CURRENCY);
+            $numberFormatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, 0);
+            return $numberFormatter->format($this->startingStake);
+        }
         return $this->startingStake;
     }
 
@@ -208,8 +214,14 @@ class Lot
     /**
      * @return int
      */
-    public function getResellPrice()
+    public function getResellPrice($formatted = false)
     {
+        if($formatted)
+        {
+            $numberFormatter = new \NumberFormatter('fr_FR', \NumberFormatter::CURRENCY);
+            $numberFormatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, 0);
+            return $numberFormatter->format($this->resellPrice);
+        }
         return $this->resellPrice;
     }
 

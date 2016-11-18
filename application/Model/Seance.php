@@ -62,9 +62,20 @@ class Seance
             $this->currentStep++;
         else
         {
+            $this->manche->setOver(true)->save();
+
+            // Paiement des lots
+            $encheres = Enchere::getMaxEncheresForManche($this->manche);
+            /**
+             * @var Enchere $enchere
+             */
+            foreach($encheres as $enchere)
+            {
+                $enchere->getJoueur()->setCapital($enchere->getJoueur()->getCapital() + $enchere->getLot()->getResellPrice())->save();
+            }
+
             if($this->numeroMancheCourante == 3)
             {
-                $this->manche->setOver(true)->save();
                 $this->currentStep = static::PAUSE;
             }
             else

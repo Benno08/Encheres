@@ -85,7 +85,6 @@ class MainController
         $joueurId = $request->getParsedBodyParam('joueurId');
         $lotId = $request->getParsedBodyParam('lotId');
         $montant = filter_var($request->getParsedBodyParam('montant'), FILTER_VALIDATE_INT);
-        error_log('1');
 
         /**
          * @var Joueur $joueur
@@ -94,7 +93,7 @@ class MainController
         $partie = Partie::getPartieFromId($partieId);
         $lot = Lot::getLotFromId($lotId);
 
-        if(is_null($partieId) || is_null($joueur) || is_null($lot))
+        if(is_null($partieId) || is_null($joueur) || is_null($lot || $partie->getCurrentManche()->isOver()))
         {
             $dataResponse = ['status'  => 'ERROR',
                              'message' => 'Partie, joueur ou lot invalide.'];
@@ -175,7 +174,10 @@ class MainController
          */
         $manche = Manche::getMancheFromId($mancheId);
 
+        // Récupération des enchère max pour chacun des lots
+        $encheres = Enchere::getMaxEncheresForManche($manche);
+        $args['encheres'] = $encheres;
 
-        return di('renderer')->render($response, 'resultats.phtml', $args);
+        return di('renderer')->render($response, 'partials/resultats.phtml', $args);
     }
 }
