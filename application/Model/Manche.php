@@ -96,13 +96,15 @@ class Manche
      * @param int $limit
      * @return array
      */
-    public function prepareLots($limit = 10)
+    public function prepareLots($limit = 10, $minValeurRevente, $maxValeurRevente)
     {
         $items = [];
 
-        $query = 'SELECT * FROM Lot WHERE id ORDER BY RAND() LIMIT :limit;';
+        $query = 'SELECT * FROM Lot WHERE resellPrice >= :minValeurRevente AND resellPrice <= :maxValeurRevente ORDER BY RAND() LIMIT :limit;';
         $sth = db()->prepare($query);
         $sth->bindParam(':limit', $limit, \PDO::PARAM_INT);
+        $sth->bindParam(':minValeurRevente', $minValeurRevente, \PDO::PARAM_INT);
+        $sth->bindParam(':maxValeurRevente', $maxValeurRevente, \PDO::PARAM_INT);
 
         if($sth->execute())
         {

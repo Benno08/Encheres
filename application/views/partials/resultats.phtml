@@ -10,7 +10,7 @@
             <p><?php echo($resultat->getLot()->getDescription()); ?></p>
         </div>
         <div class="col-md-4">
-            <img src="<?php echo($resultat->getJoueur()->getImage()); ?>" alt="<?php echo($resultat->getJoueur()->getName()); ?>"/> <?php echo($resultat->getJoueur()->getName()); ?>
+            <img class="meilleureOffreImage" src="<?php echo($resultat->getJoueur()->getImage()); ?>" alt="<?php echo($resultat->getJoueur()->getName()); ?>"/> <?php echo($resultat->getJoueur()->getName()); ?>
         </div>
         <div class="col-md-4">
             <p>Prix revente : <span class="prixrevente"><?php echo($resultat->getLot()->getResellPrice(true)); ?></span></p>

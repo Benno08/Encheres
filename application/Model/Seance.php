@@ -37,7 +37,7 @@ class Seance
     /**
      * @var array[Lot]
      */
-    protected $lots = null;
+    protected $lots = [];
 
     /**
      * Seance constructor.
@@ -53,7 +53,7 @@ class Seance
 
     public function moveToNextStep()
     {
-        if($this->currentStep == static::RESULTAT_ENCHERE && $this->numeroEnchereMancheCourante < static::ENCHERES_PAR_MANCHE)
+        if($this->currentStep == static::RESULTAT_ENCHERE && $this->numeroEnchereMancheCourante < count($this->lots))
         {
             $this->numeroEnchereMancheCourante++;
             $this->currentStep = static::ENCHERE;
@@ -85,7 +85,7 @@ class Seance
                 $manche = new Manche(null, $this->partie, false);
                 $manche->save();
                 $this->manche = $manche;
-                $this->lots = $manche->prepareLots(static::ENCHERES_PAR_MANCHE);
+                $this->lots = $manche->prepareLots(static::ENCHERES_PAR_MANCHE, $this->getMinValeurReventeParManche(), $this->getMaxValeurReventeParManche());
                 $this->currentStep = static::ENCHERE;
             }
         }
@@ -115,7 +115,7 @@ class Seance
             case 2:
                 return 100000;
             case 3:
-                return 1000000;
+                return 10000000;
         }
     }
 
